@@ -7,8 +7,7 @@ The app allows users to **add, view, edit, and delete tasks** with an intuitive 
 
 ## 🚀 Live Demo
 
-👉 [**Deployed App -- to be added**](#)  
-_(Add your Vercel/Render/VPS link here)_
+👉 [**Deployed App (to be added)**](#) 
 
 ---
 
