@@ -4,6 +4,7 @@ import { useSearchParams, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useTodoContext } from '@/context/TodoContext'
 import { Todo } from '@/types/Todo'
+import { Trash2 } from 'lucide-react'
 
 export default function EditPage() {
   const searchParams = useSearchParams()
@@ -74,9 +75,9 @@ export default function EditPage() {
         {/* Delete Button Top Right */}
         <button
           onClick={handleDelete}
-          className="btn btn-sm btn-error btn-outline absolute top-0 right-0"
+          className="btn btn-sm btn-error btn-outline absolute top-0 right-0 flex items-center gap-1"
         >
-          Delete
+          <Trash2 className="w-4 h-4" /> Delete
         </button>
       </div>
 

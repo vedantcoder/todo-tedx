@@ -2,7 +2,9 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import tedxLogo from '@/components/Icons/logo.png' // place your logo in public/assets or src/assets
+import tedxLogo from '@/components/Icons/logo.png'
+import { Plus, ListTodo} from 'lucide-react'
+
 
 export default function Navbar() {
   return (
@@ -22,16 +24,13 @@ export default function Navbar() {
 
         {/* Right - Navigation Links */}
         <div className="flex gap-3">
-          <Link href="/add" className="btn btn-sm btn-outline text-white border-white hover:bg-white hover:text-[#e10600]">
-            ➕ Add
-          </Link>
-          <Link href="/view" className="btn btn-sm btn-outline text-white border-white hover:bg-white hover:text-[#e10600]">
-            🗂️ View
-          </Link>
-          <Link href="/edit" className="btn btn-sm btn-outline text-white border-white hover:bg-white hover:text-[#e10600]">
-            ✏️ Edit
-          </Link>
-        </div>
+        <Link href="/add" className="btn btn-sm btn-outline text-white border-white hover:bg-white hover:text-[#e10600]">
+          <Plus className="w-4 h-4 mr-1" /> Add
+        </Link>
+        <Link href="/view" className="btn btn-sm btn-outline text-white border-white hover:bg-white hover:text-[#e10600]">
+          <ListTodo className="w-4 h-4 mr-1" /> View
+        </Link>
+      </div>
       </div>
     </nav>
   )
