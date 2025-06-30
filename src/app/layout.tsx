@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import { TodoProvider } from '@/context/TodoContext'
 import Navbar from '@/components/UI/Navbar'
 import Footer from '@/components/UI/Footer'
+import { Toaster } from 'react-hot-toast'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,6 +24,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Footer />
+          <Toaster position="top-center" />
         </TodoProvider>
       </body>
     </html>

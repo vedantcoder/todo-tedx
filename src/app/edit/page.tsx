@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { useTodoContext } from '@/context/TodoContext'
 import { Todo } from '@/types/Todo'
 import { Trash2 } from 'lucide-react'
+import toast from 'react-hot-toast'
 
 export default function EditPage() {
   const searchParams = useSearchParams()
@@ -46,16 +47,20 @@ export default function EditPage() {
     }
 
     editTodo(updatedTodo)
-    alert('TODO updated!')
+    toast.success('task updated!')
     router.push('/view')
   }
 
   const handleDelete = () => {
     if (!todo) return
+
     const confirmed = confirm('Are you sure you want to delete this TODO?')
     if (confirmed) {
       deleteTodo(todo.id)
+      toast.success('Task deleted successfully!')
       router.push('/view')
+    } else {
+      toast('❌ Deletion cancelled')
     }
   }
 

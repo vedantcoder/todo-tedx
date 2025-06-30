@@ -1,11 +1,14 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { useTodoContext } from '@/context/TodoContext'
 import { v4 as uuidv4 } from 'uuid'
 import { Todo } from '@/types/Todo'
+import toast from 'react-hot-toast'
 
 export default function AddPage() {
+  const router = useRouter()
   const { addTodo } = useTodoContext()
 
   const [title, setTitle] = useState('')
@@ -16,7 +19,7 @@ export default function AddPage() {
     e.preventDefault()
 
     if (!title.trim()) {
-      alert('Title is required')
+      toast.error('Title is required')
       return
     }
 
@@ -30,10 +33,8 @@ export default function AddPage() {
     }
 
     addTodo(newTodo)
-    setTitle('')
-    setDescription('')
-    setDueDate('')
-    alert('TODO added!')
+    toast.success('Task added successfully!')
+    router.push('/view')
   }
 
   return (
