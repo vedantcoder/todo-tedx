@@ -1,4 +1,6 @@
+
 'use client'
+export const dynamic = 'force-dynamic';
 
 import { useSearchParams, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -6,7 +8,6 @@ import { useTodoContext } from '@/context/TodoContext'
 import { Todo } from '@/types/Todo'
 import { Trash2 } from 'lucide-react'
 import toast from 'react-hot-toast'
-
 export default function EditPage() {
   const searchParams = useSearchParams()
   const router = useRouter()
@@ -134,3 +135,5 @@ export default function EditPage() {
     </div>
   )
 }
+
+// export const dynamic = 'force-dynamic'
